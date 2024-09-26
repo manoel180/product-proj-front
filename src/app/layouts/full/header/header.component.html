@@ -1,0 +1,50 @@
+<mat-toolbar class="topbar">
+  <!-- Mobile Menu -->
+  @if(!showToggle) {
+  <button
+    mat-mini-fab
+    color="inherit"
+    (click)="toggleMobileNav.emit()"
+    class="d-flex justify-content-center"
+  >
+    <mat-icon aria-hidden="false" aria-label="home icon" fontIcon="menu"></mat-icon>
+  </button>
+  }
+
+
+
+  <span class="flex-1-auto"></span>
+  <!-- --------------------------------------------------------------- -->
+  <!-- profile Dropdown -->
+  <!-- --------------------------------------------------------------- -->
+  <button
+    mat-fab
+    extended
+    color="inherit"
+    [matMenuTriggerFor]="profilemenu"
+    aria-label="acounts"
+    class="d-flex justify-content-center profile-btn-dd"
+  >
+  {{userInfo}}
+    <mat-icon aria-hidden="false" aria-label="account icon" fontIcon="account_circle"></mat-icon>
+
+  </button>
+  <mat-menu #profilemenu="matMenu" class="topbar-dd cardWithShadow">
+    <button mat-menu-item>
+
+      <mat-icon class="d-flex align-items-center"
+                fontIcon="account_circle"></mat-icon>My Profile
+    </button>
+
+
+    <div class="p-x-12 m-t-12">
+      <a
+        [routerLink]="['/login']"
+        mat-stroked-button
+        color="primary"
+        class="w-100"
+        >Logout</a
+      >
+    </div>
+  </mat-menu>
+</mat-toolbar>

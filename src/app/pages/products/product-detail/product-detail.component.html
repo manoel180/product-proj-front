@@ -1,0 +1,19 @@
+
+<form  [formGroup]="form"  class="product-form">
+  <mat-form-field class="full-width">
+    <mat-label>Nome</mat-label>
+    <input matInput placeholder="Nome produto" formControlName="name" />
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Descrição</mat-label>
+    <input matInput placeholder="Descrição produto" formControlName="description" />
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Preço</mat-label>
+    <input matInput placeholder="Preço produto" formControlName="price" />
+  </mat-form-field>
+</form>
+
+<button mat-raised-button class="save-button"  (click)="save()"  >
+  Salvar
+</button>
